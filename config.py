@@ -4,7 +4,7 @@ class API:
     API_ID = e["API_ID"]
     API_HASH = e["API_HASH"]
 
-class TOKEN:
+class TOKENS:
     BOT_TOKEN = e["BOT_TOKEN"]
 
 class DB:
