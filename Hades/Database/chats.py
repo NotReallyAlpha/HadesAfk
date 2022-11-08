@@ -9,7 +9,7 @@ async def add_chat(chat_id: int):
     return
 
 async def get_chats():
-    x = chatsdb.find({"chat_id": {"$gt": 0}})
+    x = chatsdb.find({"chat_id": {"$lt": 0}})
     if not x:
         return []
     CHATS = []
