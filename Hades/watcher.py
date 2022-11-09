@@ -51,7 +51,7 @@ async def afk_reply_watcher(_, m):
         reply_id = m.reply_to_message.from_user.id 
         afk, details = await is_afk(reply_id)
     txt = ""
-    first_name = m.reply_to_message.from_user.first_name
+    first_name = m.reply_to_message.from_user.first_name if m.reply_to_message else None
     if afk:
         type = details["type"]
         if type == "photo":
