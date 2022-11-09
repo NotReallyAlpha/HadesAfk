@@ -4,6 +4,8 @@ async def afk(_, m):
     if not m.from_user:
         return
     user_id = m.from_user.id
+    first_name = m.from_user.first_name
+    await m.reply(f"{first_name} is AFK !")
     reply = m.reply_to_message
     try:
         if reply:
