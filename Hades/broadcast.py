@@ -1,5 +1,5 @@
 import asyncio 
-from config import DEV
+
 from .Database.chats import get_chats
 from pyrogram.errors import FloodWait
 
