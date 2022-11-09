@@ -18,25 +18,25 @@ async def afk_watcher(_, m):
         if type == "photo":
             final_time = get_readable_time(details["time"] - time.time())
             reason = details["reason"]
-            txt += f"{first_name} is back online and was away for {final_time}"
+            txt += f"**{first_name}** is back online and was away for {final_time}"
             txt += " "
-            txt += f"\n\n**Reason** : {reason}" if reason else ""
+            txt += f"\n\n**Reason** : `{reason}`" if reason else ""
             await m.reply_photo(f"downloads/{user_id}.jpg", caption=txt)
             await del_afk(user_id)
         elif type == "animation":
             final_time = get_readable_time(details["time"] - time.time())
             reason = details["reason"]
-            txt += f"{first_name} is back online and was away for {final_time}"
+            txt += f"**{first_name}** is back online and was away for {final_time}"
             txt += " "
-            txt += f"\n\n**Reason** : {reason}" if reason else ""
+            txt += f"\n\n**Reason** : `{reason}`" if reason else ""
             await m.reply_animation(details["data"], caption=txt)
             await del_afk(user_id)
         elif type == "text":
             final_time = get_readable_time(details["time"] - time.time())
             reason = details["reason"]
-            txt += f"{first_name} is back online and was away for {final_time}"
+            txt += f"**{first_name}** is back online and was away for {final_time}"
             txt += " "
-            txt += f"\n\n**Reason** : {reason}" if reason else ""
+            txt += f"\n\n**Reason** : `{reason}`" if reason else ""
             await m.reply(txt)
             await del_afk(user_id)
 
@@ -50,23 +50,23 @@ async def afk_reply_watcher(_, m):
         if type == "photo":
             final_time = get_readable_time(details["time"] - time.time())
             reason = details["reason"]
-            txt += f"{first_name} is AFK since {final_time}"
+            txt += f"**{first_name}** is AFK Since {final_time}"
             txt += " "
-            txt += f"\n\n**Reason** : {reason}" if reason else ""
+            txt += f"\n\n**Reason** : `{reason}`" if reason else ""
             await m.reply_photo(f"downloads/{user_id}.jpg", caption=txt)
         elif type == "animation":
             final_time = get_readable_time(details["time"] - time.time())
             reason = details["reason"]
-            txt += f"{first_name} is AFK since {final_time}"
+            txt += f"**{first_name}** is AFK Since {final_time}"
             txt += " "
-            txt += f"\n\n**Reason** : {reason}" if reason else ""
+            txt += f"\n\n**Reason** : `{reason}`" if reason else ""
             await m.reply_animation(details["data"], caption=txt)
         elif type == "text":
             final_time = get_readable_time(details["time"] - time.time())
             reason = details["reason"]
-            txt += f"{first_name} is AFK since {final_time}"
+            txt += f"**{first_name}** is AFK Since {final_time}"
             txt += " "
-            txt += f"\n\n**Reason** : {reason}" if reason else ""
+            txt += f"\n\n**Reason** : `{reason}`" if reason else ""
             await m.reply(txt)
 
     if m.text:
@@ -85,23 +85,23 @@ async def afk_reply_watcher(_, m):
             if type == "photo":
                 final_time = get_readable_time(details["time"] - time.time())
                 reason = details["reason"]
-                txt += f"{first_name} is AFK since {final_time}"
+                txt += f"**{first_name}** is AFK since {final_time}"
                 txt += " "
-                txt += f"\n\n**Reason** : {reason}" if reason else ""
+                txt += f"\n\n**Reason** : `{reason}`" if reason else ""
                 await m.reply_photo(f"downloads/{user_id}.jpg", caption=txt)
             elif type == "animation":
                 final_time = get_readable_time(details["time"] - time.time())
                 reason = details["reason"]
-                txt += f"{first_name} is AFK since {final_time}"
+                txt += f"**{first_name}** is AFK since {final_time}"
                 txt += " "
-                txt += f"\n\n**Reason** : {reason}" if reason else ""
+                txt += f"\n\n**Reason** : `{reason}`" if reason else ""
                 await m.reply_animation(details["data"], caption=txt)
             elif type == "text":
                 final_time = get_readable_time(details["time"] - time.time())
                 reason = details["reason"]
-                txt += f"{first_name} is AFK since {final_time}"
+                txt += f"**{first_name}** is AFK since {final_time}"
                 txt += " "
-                txt += f"\n\n**Reason** : {reason}" if reason else ""
+                txt += f"\n\n**Reason** : `{reason}`" if reason else ""
                 await m.reply(txt)
 
 PIC = "https://te.legra.ph/file/ba980e91c447df3bbedfe.jpg"
