@@ -19,5 +19,5 @@ async def start(_, m):
              ]
              ]
              )
-    await m.reply_photo(LINK, caption=TEXT, reply_markup=markup)
+    await m.reply_photo(LINK, caption=TEXT.format(name), reply_markup=markup)
     
