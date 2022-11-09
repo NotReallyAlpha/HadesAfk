@@ -12,12 +12,12 @@ async def afk_plug(_, m):
 
 @hades.on_message(group=1)
 async def watcher1(_, m):
-    await afk_watcher(_, m):
+    await afk_watcher(_, m)
 
 @hades.on_message(group=2)
 async def watcher2(_, m):
-    await afk_reply_watcher(_, m):
+    await afk_reply_watcher(_, m)
 
 @hades.on_message(group=3 & filters.new_chat_members)
 async def welcome_plug(_, m):
-    await welcome(_, m):
+    await welcome(_, m)
