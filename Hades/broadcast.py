@@ -1,7 +1,7 @@
 import asyncio 
 from config import DEV
 from .Database.chats import get_chats
-from pyrogram.errors FloodWait
+from pyrogram.errors import FloodWait
 
 async def broadcast(_, message):
     if message.reply_to_message:
