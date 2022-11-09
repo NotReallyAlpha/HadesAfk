@@ -1,7 +1,7 @@
 import time
 from Hades.Database.afk import add_afk
 
-async def afk(_, message: Message):
+async def afk(_, message):
     if message.sender_chat:
         return
     user_id = message.from_user.id
