@@ -1,5 +1,6 @@
 from Hades.Database.afk import is_afk, del_afk
 import time 
+from Hades.Database.chats import add_chat
 from .helpers import get_readable_time
 
 uname = None
