@@ -52,5 +52,17 @@ async def afk(_, m):
                           "reason": _reason if _reason else None,
                           "time": time_afk
                           }
+        else:
+            _reason = m.text.split(None, 1)[1]
+            time_afk = time.time()
+            details = {
+                      "type": "text",
+                      "reason": _reason if _reason else None,
+                      "time": time_afk
+                      }
+    except Exception as e:
+        return await m.reply(e)
+
+    await add_afk(user_id, details)
                  
         
