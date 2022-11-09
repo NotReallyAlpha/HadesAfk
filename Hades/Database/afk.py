@@ -15,7 +15,7 @@ async def del_afk(user_id: int):
     return
 
 async def add_afk(user_id: int, details):
-    x = await is_afk(user_id)
+    x = await afkdb.find_one({"user_id": user_id})
     if x:
         await del_afk(user_id)
     return await afkdb.insert_one({"user_id": user_id}, {"$set": {"details": details}})
