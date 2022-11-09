@@ -27,7 +27,6 @@
    ],
   "repository": "https://github.com/Timeisnotwaiting/HadesAfk",
   "env": {
-    },
     "API_ID": {
       "description": "Get this value from my.telegram.org.",
       "required": true,
@@ -54,3 +53,4 @@
       "value": ""
     }
   }
+}
