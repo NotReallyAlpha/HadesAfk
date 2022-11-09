@@ -1,4 +1,4 @@
-from config import API, TOKENS
+from config import API, TOKENS, DEV
 from pyrogram import Client as Hades, idle
 from pyrogram.filters import command as hade_cmd, new_chat_members, user
 from Hades.afk import afk
