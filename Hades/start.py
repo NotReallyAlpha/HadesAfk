@@ -5,7 +5,7 @@ Try: replying afk to some media or stickers or gifs to make it more reasonable !
 """
 
 from pyrogram.types import InlineKeyboardButton as IKB, InlineKeyboardMarkup as IKM
-from .Database.users import add_user
+#from .Database.users import add_user
 
 LINK = "https://te.legra.ph/file/a2667ec3a9c9a986ae056.jpg"
 
@@ -21,4 +21,4 @@ async def start(_, m):
              ]
              )
     await m.reply_photo(LINK, caption=TEXT.format(name), reply_markup=markup)
-    await add_user(m.from_user.id)
+    #await add_user(m.from_user.id)
