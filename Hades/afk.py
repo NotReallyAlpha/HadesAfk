@@ -67,6 +67,5 @@ async def afk(_, m):
         return await m.reply(e)
 
     await add_afk(user_id, details)
-    await m.reply("done")
                  
         
