@@ -4,6 +4,7 @@ from .helpers import get_readable_time
 
 uname = None
 async def afk_watcher(_, m):
+    global uname 
     if not uname:
         uname = (await _.get_me()).username
     if not m.from_user:
