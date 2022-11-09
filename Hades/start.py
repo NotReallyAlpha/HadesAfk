@@ -10,7 +10,6 @@ from .Database.users import add_user
 LINK = "https://te.legra.ph/file/a2667ec3a9c9a986ae056.jpg"
 
 async def start(_, m):
-    await add_user(m.from_user.id)
     l = await _.get_me()
     un = l.username
     name = m.from_user.first_name
@@ -22,4 +21,4 @@ async def start(_, m):
              ]
              )
     await m.reply_photo(LINK, caption=TEXT.format(name), reply_markup=markup)
-    
+    await add_user(m.from_user.id)
