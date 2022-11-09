@@ -1,4 +1,5 @@
 import time
+from Hades.Database.afk import add_afk
 
 async def afk(_, m):
     if not m.from_user:
