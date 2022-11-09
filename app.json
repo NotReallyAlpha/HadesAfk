@@ -1,7 +1,7 @@
 {
-  "name": "String Generator by Alpha",
-  "description": "Telegram bot to generate Pyrogram & Telethon StringSession Made By Alpha",
-  "logo": "https://te.legra.ph/file/ac72a0208034b15f04c18.jpg",
+  "name": "AFK Bot By Hades Network !",
+  "description": "Pyrogram based AFK by Hades !",
+  "logo": "https://te.legra.ph/file/2f370ea06233326280613.jpg",
   "keywords": [
     "telegram",
     "bot",
@@ -25,7 +25,7 @@
          "plan": "heroku-postgresql"
       }
    ],
-  "repository": "https://github.com/theend-alpha/StringBot",
+  "repository": "https://github.com/Timeisnotwaiting/HadesAfk",
   "env": {
     },
     "API_ID": {
