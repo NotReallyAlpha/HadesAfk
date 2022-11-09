@@ -48,7 +48,7 @@ async def afk(_, m):
                           "data": _data
                           }
             else:
-                _reason = m.text.split(None, 1)[1]
+                _reason = m.text.split(None, 1)[1] if len(m.command) > 1 else None
                 time_afk = time.time()
                 details = {
                           "type": "text",
@@ -56,7 +56,7 @@ async def afk(_, m):
                           "time": time_afk
                           }
         else:
-            _reason = m.text.split(None, 1)[1]
+            _reason = m.text.split(None, 1)[1] if len(m.command) > 1 else None
             time_afk = time.time()
             details = {
                       "type": "text",
