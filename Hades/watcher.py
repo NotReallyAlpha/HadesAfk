@@ -2,9 +2,13 @@ from Hades.Database.afk import is_afk, del_afk
 import time 
 from .helpers import get_readable_time
 
+uname = None
 async def afk_watcher(_, m):
+    if not uname:
+        uname = (await _.get_me()).username
     if not m.from_user:
         return
+    if m.text.split()[0] in ["/afk"]
     user_id = m.from_user.id
     first_name = m.from_user.first_name
     afk, details = await is_afk(user_id)
