@@ -50,6 +50,8 @@ async def afk_reply_watcher(_, m):
     afk = True if m.reply_to_message else False
     if m.reply_to_message:
         reply_id = m.reply_to_message.from_user.id 
+        if m.from_user.id == reply_id:
+            return
         afk, details = await is_afk(reply_id)
     txt = ""
     first_name = m.reply_to_message.from_user.first_name if m.reply_to_message else None
