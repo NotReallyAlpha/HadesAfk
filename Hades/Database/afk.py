@@ -1,31 +1,31 @@
 from . import db
 
-afkdb = db.afk
+usersdb = db.users
 
-async def is_afk(user_id: int):
-    x = await afkdb.find_one({"user_id": user_id})
-    if not x:
+async def is_afk(user_id: int) -> bool:
+    user = await usersdb.find_one({"user_id": user_id})
+    if not user:
         return False, {}
-    return True, x["details"]
+    return True, user["reason"]
 
-async def del_afk(user_id: int):
-    x = await afkdb.find_one({"user_id": user_id})
-    if x:
-        return await afkdb.delete_one({"user_id": user_id})
-    return
 
-async def add_afk(user_id: int, details):
-    x = await afkdb.find_one({"user_id": user_id})
-    if x:
-        await afkdb.delete_one({"user_id": user_id})
-    return await afkdb.insert_one({"user_id": user_id}, {"$set": {"details": details}})
-    
-async def afk_users():
-    x = afkdb.find({"user_id": {"$gt": 0}})
-    if not x:
+async def add_afk(user_id: int, mode):
+    await usersdb.update_one(
+        {"user_id": user_id}, {"$set": {"reason": mode}}, upsert=True
+    )
+
+
+async def remove_afk(user_id: int):
+    user = await usersdb.find_one({"user_id": user_id})
+    if user:
+        return await usersdb.delete_one({"user_id": user_id})
+
+
+async def get_afk_users() -> list:
+    users = usersdb.find({"user_id": {"$gt": 0}})
+    if not users:
         return []
-    USERS = []
-    for y in await x.to_list(length=1000000000):
-        USERS.append(int(y))
-    return USERS
-    
+    users_list = []
+    for user in await users.to_list(length=1000000000):
+        users_list.append(user)
+    return users_list
