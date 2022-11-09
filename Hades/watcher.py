@@ -76,6 +76,7 @@ async def afk_reply_watcher(_, m):
             await m.reply(txt)
 
     if m.text:
+       txt = ""
         spl = m.text.split()
         uns = []
         for s in spl:
