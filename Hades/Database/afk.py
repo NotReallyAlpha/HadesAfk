@@ -15,7 +15,7 @@ async def add_afk(user_id: int, mode):
     )
 
 
-async def remove_afk(user_id: int):
+async def del_afk(user_id: int):
     user = await usersdb.find_one({"user_id": user_id})
     if user:
         return await usersdb.delete_one({"user_id": user_id})
