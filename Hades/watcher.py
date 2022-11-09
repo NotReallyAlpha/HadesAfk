@@ -44,8 +44,10 @@ async def afk_watcher(_, m):
 async def afk_reply_watcher(_, m):
     if not m.from_user:
         return
-    reply_id = m.reply_to_message.from_user.id
-    afk, details = await is_afk(reply_id)
+    afk = True if m.reply_to_message else False
+    if m.reply_to_message:
+        reply_id = m.reply_to_message.from_user.id 
+        afk, details = await is_afk(reply_id)
     if afk:
         type = details["type"]
         if type == "photo":
@@ -81,6 +83,7 @@ async def afk_reply_watcher(_, m):
         for un in uns:
             id = (await _.get_users(un)).id
             afk, details = await is_afk(id)
+            type = None
             if afk:
                 type = details["type"]
             if type == "photo":
