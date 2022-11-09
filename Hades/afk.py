@@ -21,7 +21,7 @@ async def afk(_, m):
                           }
             elif reply.sticker:
                 if reply.sticker.is_animated:
-                    _reason = m.text.split(None, 1)[1]
+                    _reason = m.text.split(None, 1)[1] if len(m.command) > 1 else None
                     time_afk = time.time()
                     details = {
                           "type": "text",
@@ -39,7 +39,7 @@ async def afk(_, m):
                           }
             elif reply.animation:
                 _data = reply.animation.file_id
-                _reason = m.text.split(None, 1)[1]
+                _reason = m.text.split(None, 1)[1] if len(m.command) > 1 else None
                 time_afk = time.time()
                 details = {
                           "type": "animation",
