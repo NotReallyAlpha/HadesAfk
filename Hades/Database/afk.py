@@ -8,7 +8,7 @@ async def is_afk(user_id: int):
         return False, {}
     return True, x["details"]
 
-def del_afk(user_id: int):
+async def del_afk(user_id: int):
     x = await afkdb.find_one({"user_id": user_id})
     if x:
         return await afkdb.delete_one({"user_id": user_id})
