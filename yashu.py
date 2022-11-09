@@ -29,7 +29,7 @@ async def watcher2(_, m):
 
 txt += "\nWatcher 2 loaded !"
 
-@hades.on_message(group=3, new_chat_members)
+@hades.on_message(new_chat_members, group=3)
 async def welcome_plug(_, m):
     await welcome(_, m)
 
