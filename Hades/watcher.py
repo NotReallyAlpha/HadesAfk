@@ -15,6 +15,7 @@ async def afk_watcher(_, m):
     user_id = m.from_user.id
     first_name = m.from_user.first_name
     afk, details = await is_afk(user_id)
+    txt = ""
     if afk:
         type = details["type"]
         if type == "photo":
