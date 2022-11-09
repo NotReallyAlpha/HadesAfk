@@ -1,6 +1,7 @@
 from config import API, TOKENS
 from pyrogram import Client as Hades, idle
-from pyrogram.filters import command as hade_cmd, new_chat_members
+from pyrogram.filters import command as hade_cmd
+from pyrogram import filters
 from Hades.afk import afk
 from Hades.watcher import afk_reply_watcher, afk_watcher, welcome
 from Hades.broadcast import broadcast
@@ -29,7 +30,7 @@ async def watcher2(_, m):
 
 txt += "\nWatcher 2 loaded !"
 
-@hades.on_message(group=3 & new_chat_members)
+@hades.on_message(group=3 & filters.new_chat_members)
 async def welcome_plug(_, m):
     await welcome(_, m)
 
