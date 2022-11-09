@@ -6,7 +6,7 @@ from Hades.watcher import afk_reply_watcher, afk_watcher, welcome
 
 hades = Hades(":Hades:", api_id=API.API_ID, api_hash=API.API_HASH, bot_token=TOKENS.BOT_TOKEN)
 
-@hades.on_message(hade_cmd(["afk"]))
+@hades.on_message(hade_cmd(["afk"]) | hade_cmd("brb", ""))
 async def afk_plug(_, m):
     await afk(_, m)
 
