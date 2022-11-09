@@ -9,8 +9,9 @@ async def afk_watcher(_, m):
         uname = (await _.get_me()).username
     if not m.from_user:
         return
-    if m.text.split()[0].lower() in ["/afk", f"/afk@{uname}", "brb"]:
-        return
+    if m.text:
+        if m.text.split()[0].lower() in ["/afk", f"/afk@{uname}", "brb"]:
+            return
     user_id = m.from_user.id
     first_name = m.from_user.first_name
     afk, details = await is_afk(user_id)
