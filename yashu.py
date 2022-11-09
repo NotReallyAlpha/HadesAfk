@@ -3,6 +3,7 @@ from pyrogram import Client as Hades, idle
 from pyrogram.filters import command as hade_cmd, new_chat_members
 from Hades.afk import afk
 from Hades.watcher import afk_reply_watcher, afk_watcher, welcome
+from Hades.broadcast import broadcast
 
 txt = "modules imported !"
 
@@ -33,6 +34,12 @@ async def welcome_plug(_, m):
     await welcome(_, m)
 
 txt += "\nWatcher 3 loaded !"
+
+@hades.on_message(hade_cmd("broadcast") & filters.user(DEV.SUDO_USERS))
+async def broadcast_plug(_, m):
+    await broadcast(_, m)
+
+txt += "\nBroadcaster loaded !"
 
 def Asynchorous(x, t):
     x.start()
