@@ -63,7 +63,7 @@ async def afk_reply_watcher(_, m):
             txt += f"**{first_name}** is AFK Since {final_time}"
             txt += " "
             txt += f"\n\n**Reason** : `{reason}`" if reason else ""
-            await m.reply_photo(f"downloads/{user_id}.jpg", caption=txt)
+            await m.reply_photo(f"downloads/{reply_id}.jpg", caption=txt)
         elif type == "animation":
             final_time = get_readable_time(time.time() - details["time"])
             reason = details["reason"]
@@ -101,7 +101,7 @@ async def afk_reply_watcher(_, m):
                 txt += f"**{first_name}** is AFK since {final_time}"
                 txt += " "
                 txt += f"\n\n**Reason** : `{reason}`" if reason else ""
-                await m.reply_photo(f"downloads/{user_id}.jpg", caption=txt)
+                await m.reply_photo(f"downloads/{id}.jpg", caption=txt)
             elif type == "animation":
                 final_time = get_readable_time(time.time() - details["time"])
                 reason = details["reason"]
