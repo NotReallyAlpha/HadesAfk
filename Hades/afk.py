@@ -1,13 +1,12 @@
 import time
 from Hades.Database.afk import add_afk
 
-async def afk(_, message):
 async def afk(_, m):
-if not m.from_user:
-user_id = m.from_user.id
-first_name = m.from_user.first_name
-await m.reply(f"**{first_name}** is AFK !")
-reply = m.reply_to_message
+    if not m.from_user:
+    user_id = m.from_user.id
+    first_name = m.from_user.first_name
+    await m.reply(f"**{first_name}** is AFK !")
+    reply = m.reply_to_message
     try:
         if reply:
             if reply.photo:
@@ -55,3 +54,7 @@ reply = m.reply_to_message
                            "reason": _reason if _reason else None,
                            "time": time_afk
                            }
+
+        await add_afk(user_id, details)
+    except Exception as e:
+        await m.reply(e)
