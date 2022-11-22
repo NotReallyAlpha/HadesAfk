@@ -54,5 +54,8 @@ def Asynchorous(x):
     print(t)
     idle()
 
-Asynchorous(hades)
+try:
+    Asynchorous(hades)
+except:
+    pass
 
