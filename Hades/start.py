@@ -1,4 +1,4 @@
-TEXT = """Hey {}! I'm AFK Bot of Hades Network. 
+TEXT = """Hey {}! I'm AFK Bot of Spoiled Community. 
 
 Try: replying afk to some media or stickers or gifs to make it more reasonable !
 
@@ -21,4 +21,4 @@ async def start(_, m):
              ]
              )
     await m.reply_photo(LINK, caption=TEXT.format(name), reply_markup=markup)
-    #await add_user(m.from_user.id)
+    await add_user(m.from_user.id)
