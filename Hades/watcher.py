@@ -25,16 +25,22 @@ async def afk_watcher(_, m):
             txt += f"**{first_name}** is back online and was away for {final_time}"
             txt += " "
             txt += f"\n\n**Reason** : `{reason}`" if reason else ""
-            await m.reply_photo(f"downloads/{user_id}.jpg", caption=txt)
-            await del_afk(user_id)
+            try:
+                await m.reply_photo(f"downloads/{user_id}.jpg", caption=txt)
+                await del_afk(user_id)
+            except:
+                pass
         elif type == "animation":
             final_time = get_readable_time(time.time() - details["time"])
             reason = details["reason"]
             txt += f"**{first_name}** is back online and was away for {final_time}"
             txt += " "
             txt += f"\n\n**Reason** : `{reason}`" if reason else ""
-            await m.reply_animation(details["data"], caption=txt)
-            await del_afk(user_id)
+            try:
+                await m.reply_animation(details["data"], caption=txt)
+                await del_afk(user_id)
+            except:
+                pass
         elif type == "text":
             final_time = get_readable_time(time.time() - details["time"])
             reason = details["reason"]
